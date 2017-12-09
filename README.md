@@ -24,6 +24,16 @@ The makefile for darknet framework under darknet_ros has GPU,cuDNN and OpenCV en
 Modify the lines 26,27 of single_image_test.cpp and lines 27,28 of yolo_ross.cpp 
 to point to the correct path to the config and weight files in your directories.
 
+Do note that we need to fetch the weights and put them in the weights folder where of darknet ros
+Do:
+cd test_ws/src/darknet_ros/weights
+wget https://pjreddie.com/media/files/yolo-voc.weights
+
+If you need any other weights for any other configuration,
+change the path to configuration in yolo_ros.cpp accordingly and go to
+https://pjreddie.com/darknet/yolo/
+and figure out the corresponding weight file, download and add them to the weights.
+
 Then do 
 catkin_make --pkg usb_cam
 catkin_make --pkg darknet_ros
